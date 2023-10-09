@@ -1,21 +1,6 @@
 #include <iostream>
 using namespace std;
-/*Реалізувати клас Student, який містить приватні поля для зберігання прізвища(тип string),
-імені (тип string), по батькові (тип string), дати народження (бажано окремого
-користувацького
-класового типу DateTime), домашньої адреси (тип string), телефонного номера (тип string) .
-Для всіх цих полів мають бути геттери (константні), сеттери
-(назви параметрів у сетерах, як завжди, мають збігатися :
-назвами полів класу) .
 
-Зробити константний метод для показу інформації про студента.
-Зробити конструктор без параметрів, і 2 додаткові версії конструкторів з параметрами.
-Застосувати делегування для конструкторів.
-Також у класі мають бути передбачені 3 поля-покажчики для зберігання динамічних масивів
-оцінок - за практики, домашні роботи та іспити А також три поля типу int для зберігання
-кількості елементів цих масивів. Зробити геттери для цих кількостей. Зробити 3 методи з
-додавання певного типу оцінок
-*/
 class Student
 {
 private:
@@ -38,10 +23,12 @@ private:
     
 
 public:
-    Student()
-    {
-        cout << "Student has been created!\n";
+    Student() : name(""), surname(""), father_name(""), birth_date(""), home_address(""), phone_number("") {
+        cout << "Student has been created!" << endl;
     }
+
+    Student(string name, string surname, string father_name, string birth_date, string home_address, string phone_number)
+        : name(name), surname(surname), father_name(father_name), birth_date(birth_date), home_address(home_address), phone_number(phone_number) {}
 
     ~Student()
     {
